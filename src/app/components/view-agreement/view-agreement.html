@@ -1,0 +1,49 @@
+<div class="container">
+  <h2 class="page-title">Agreement Details</h2>
+
+  <mat-progress-spinner
+    *ngIf="loading"
+    mode="indeterminate"
+    diameter="50"
+    class="spinner"
+  ></mat-progress-spinner>
+
+  <mat-card *ngIf="!loading && agreement" class="agreement-card">
+    <mat-card-title>{{ agreement.name }}</mat-card-title>
+
+    <mat-card-content>
+      <p><strong>Email:</strong> {{ agreement.email }}</p>
+      <p><strong>Company:</strong> {{ agreement.company }}</p>
+      <p>
+        <strong>Status:</strong>
+        <span
+          [ngClass]="{
+            'status-sent': agreement.status === 'Sent',
+            'status-completed': agreement.status === 'Completed'
+          }"
+          >{{ agreement.status }}</span
+        >
+      </p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-stroked-button color="primary" (click)="back()">
+        Back
+      </button>
+
+      <button
+        mat-flat-button
+        color="accent"
+        *ngIf="agreement?.envelopeId"
+        (click)="viewSignedDoc(agreement.envelopeId)"
+      >
+        View Signed Document
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div *ngIf="!loading && !agreement" class="empty">
+    <p>No agreement found.</p>
+    <button mat-stroked-button color="primary" (click)="back()">Back</button>
+  </div>
+</div>

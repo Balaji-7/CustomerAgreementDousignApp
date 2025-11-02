@@ -1,0 +1,34 @@
+.dashboard-container {
+  padding: 1.5rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.empty-state {
+  margin-top: 2rem;
+  text-align: center;
+  color: gray;
+}
+
+/* Center align the heading text */
+.actionHeading {
+  text-align: center;
+}
+
+/* Center the buttons horizontally and space them */
+.action-buttons {
+ text-align: center;
+ 
+}
+
+.action-buttons button {
+  margin: 0 0.25rem;
+}
+

@@ -1,0 +1,50 @@
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.page-title {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.spinner {
+  margin: 100px auto;
+}
+
+.agreement-card {
+  text-align: left;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+mat-card-title {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+mat-card-content p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.status-sent {
+  color: #ff9800;
+}
+
+.status-completed {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+mat-card-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.empty {
+  margin-top: 50px;
+}

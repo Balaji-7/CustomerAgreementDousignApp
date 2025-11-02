@@ -1,0 +1,24 @@
+<div class="embed-container">
+  <div class="embed-header">
+    <h2>Signed Document</h2>
+    <button mat-stroked-button color="primary" (click)="goBack()">
+      ← Back
+    </button>
+  </div>
+
+  <!-- Loader while iframe is loading -->
+  <div *ngIf="loading" class="loader-container">
+    <mat-spinner diameter="60"></mat-spinner>
+    <p>Loading document...</p>
+  </div>
+
+  <!-- Embedded DocuSign frame -->
+  <iframe
+    *ngIf="!loading && safeUrl"
+    [src]="safeUrl"
+    width="100%"
+    height="800px"
+    frameborder="0"
+     onload="window.dispatchEvent(new Event('iframeLoaded'))"
+  ></iframe>
+</div>

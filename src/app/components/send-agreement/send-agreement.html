@@ -1,0 +1,21 @@
+<h2>Send New Agreement</h2>
+    <form (ngSubmit)="sendAgreement()" #agreementForm="ngForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Client Name</mat-label>
+        <input matInput [(ngModel)]="form.name" name="name" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Client Email</mat-label>
+        <input matInput [(ngModel)]="form.email" name="email" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Company Name</mat-label>
+        <input matInput [(ngModel)]="form.company" name="company" required>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="loading">
+        {{ loading ? 'Sending...' : 'Send for Signature' }}
+      </button>
+    </form>
