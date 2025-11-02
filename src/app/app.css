@@ -1,7 +1,42 @@
- .spacer {
-     flex: 1 1 auto;
- }
+mat-toolbar {
+  background-color: #1976d2; /* Material Blue 700 */
+  color: white;
+}
 
- .main-container {
-     padding: 1.5rem;
- }
+mat-toolbar button {
+  color: white;
+  font-weight: 500;
+}
+
+mat-toolbar mat-icon {
+  color: white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.main-container {
+  padding: 1.5rem;
+}
+
+/* Hide the menu icon by default */
+mat-icon.menu-icon {
+  display: none;
+}
+
+/* Responsive toolbar */
+@media (max-width: 768px) {
+  mat-toolbar {
+    flex-wrap: wrap;
+  }
+mat-icon.menu-icon {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+
+  /* Optionally hide the toolbar buttons on mobile */
+  mat-toolbar button {
+    display: none;
+  }
+}

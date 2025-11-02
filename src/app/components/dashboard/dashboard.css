@@ -1,20 +1,38 @@
 .dashboard-container {
   padding: 1.5rem;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 h2 {
   margin-bottom: 1rem;
+  font-size: 1.6rem;
+  text-align: center;
 }
 
+button[mat-raised-button] {
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+/* Table styles */
 .full-width {
   width: 100%;
   margin-top: 1rem;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: center;
+  padding: 0.75rem;
+  white-space: nowrap;
 }
 
 .empty-state {
   margin-top: 2rem;
   text-align: center;
   color: gray;
+  font-size: 0.95rem;
 }
 
 /* Center align the heading text */
@@ -22,13 +40,66 @@ h2 {
   text-align: center;
 }
 
-/* Center the buttons horizontally and space them */
+/* Center the buttons and add spacing */
 .action-buttons {
- text-align: center;
- 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .action-buttons button {
-  margin: 0 0.25rem;
+  flex: 1 1 auto;
+  min-width: 110px;
 }
 
+/* ✅ Responsive: Mobile view adjustments */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+  }
+
+  /* Make buttons stack vertically on small screens */
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .action-buttons button {
+    width: 90%;
+    max-width: 200px;
+  }
+}
+
+/* ✅ Very small screens (mobile portrait < 480px) */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .full-width {
+    display: block;
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 600px;
+  }
+
+  .action-buttons button {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+}

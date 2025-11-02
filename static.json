@@ -1,5 +1,5 @@
 {
-  "root": "dist/cams-frontend",
+  "root": "dist/cams-frontend/browser",
   "clean_urls": true,
   "routes": {
     "/**": "index.html"
