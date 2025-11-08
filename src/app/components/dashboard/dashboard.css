@@ -52,6 +52,12 @@ th, td {
   flex: 1 1 auto;
   min-width: 110px;
 }
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px; /* Adjust for visual balance */
+}
 
 /* ✅ Responsive: Mobile view adjustments */
 @media (max-width: 768px) {

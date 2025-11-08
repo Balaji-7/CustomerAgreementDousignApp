@@ -5,8 +5,10 @@
 
   <!-- Desktop Navigation -->
   <nav class="nav-links">
-    <button mat-button routerLink="/">Dashboard</button>
+    <button mat-button routerLink="/dashboard">Dashboard</button>
     <button mat-button routerLink="/send">Send Agreement</button>
+    <button mat-button color="warn" (click)="logout()" *ngIf="auth.isLoggedIn">Logout</button>
+    <button mat-button color="warn" (click)="logout()" *ngIf="!auth.isLoggedIn">Login</button>
   </nav>
 
   <!-- Mobile Menu Button -->
@@ -17,8 +19,9 @@
 
 <!-- Mobile Dropdown Menu -->
 <nav class="mobile-menu" *ngIf="menuOpen">
-  <button mat-button routerLink="/" (click)="toggleMenu()">Dashboard</button>
+  <button mat-button routerLink="/dashboard" (click)="toggleMenu()">Dashboard</button>
   <button mat-button routerLink="/send" (click)="toggleMenu()">Send Agreement</button>
+  <button mat-button color="warn" (click)="logout()">Logout</button>
 </nav>
 
 <div class="main-container">

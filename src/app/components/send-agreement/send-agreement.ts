@@ -35,7 +35,7 @@ export class SendAgreement {
     }
 
     this.loading = true;
-
+    localStorage.setItem('userEmail', this.form.email);
     this.docusignService.sendAgreement(this.form).subscribe({
       next: (res) => {
         try {
